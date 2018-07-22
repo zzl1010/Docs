@@ -258,6 +258,8 @@ let connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
+When using the `HttpMessageHandlerFactory` option to replace the `HttpMessageHandler`, the other HTTP-related configuration options (`Cookies`, `Headers`, `ClientCertificates`, `Credentials`/`UseDefaultCredentials` and `Proxy`) are overridden. Since those options are also used by the WebSocket transport (which does **not** use your custom `HttpMessageHandler`), cookies set by the initial negotiate request will no longer be automatically available for the WebSocket connection. You can continue sharing these by creating a [`CookieContainer`](/dotnet/api/system.net.cookiecontainer) and using the same instance between both the `HttpConnectionOptions.Connection` and your custom `HttpMessageHandler`.
+
 ## Additional resources
 
 * <xref:tutorials/signalr>
