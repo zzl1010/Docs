@@ -6,6 +6,7 @@ ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
 ---
+
 # Overview of ASP.NET Core MVC
 
 By [Steve Smith](https://ardalis.com/)
